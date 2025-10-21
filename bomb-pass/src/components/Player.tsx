@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import type { Player } from '@/app/types/players';
-import {CONFIG} from '@/utils/config';
+import { CONFIG } from '@/utils/config';
 
 interface PlayerProps {
   player: Player;
@@ -25,7 +25,7 @@ function Player({ player, hasBomb, isMe }: PlayerProps) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        fontSize: '20px',
+        fontSize: '14px',
         fontWeight: 'bold',
         color: '#fff',
         zIndex: hasBomb ? 10 : 1,
@@ -34,12 +34,12 @@ function Player({ player, hasBomb, isMe }: PlayerProps) {
       {player.name}
       {hasBomb && (
         <motion.div
-          animate={{ 
+          animate={{
             scale: [1, 1.3, 1],
             rotate: [0, 10, -10, 0]
           }}
-          transition={{ 
-            repeat: Infinity, 
+          transition={{
+            repeat: Infinity,
             duration: 0.6,
             ease: "easeInOut"
           }}
